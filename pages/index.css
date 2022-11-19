@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+* font family loaded 
+* Josefin Sans', sans-serif
+* 'Poppins', sans-serif
+* 'Playfair Display', serif
+*/
+:root {
+    font-size: 16px;
+    --selection_bg: #fda350;
+    --selection_color: #ffffff;
+    --lin_height: 1.6rem;
+    --danger_color: #f44336;
+    --success_color: #4caf50;
+    --warning_color: #ffe57b;
+    --link_color: #ff7c4d;
+    --light_color: #fff;
+    --border: 1px solid #0001;
+    --primary_color: #ff654b;
+    --secondary_color: #ffc400;
+    --body_bg_color: #f8f8f8;
+    --color: #333;
+    --scrollbar_gradient: linear-gradient(#ff0180, #ffae68);
+    --brand_primary_color: #333;
+    --brand_gradient_color: linear-gradient(45deg, #ffa60096, #ff0090b4);
+    --brand_font_size: 1.5rem;
+    --nav_color: #333;
+    --nav_hover_color: #111;
+    --nav_bg_color: #fff;
+    --nav_hover_bg_color: #f8f8f8;
+    --dropdown_width: 250px;
+    --nav_toggle_display: none;
+    --btn_bg_color: linear-gradient(45deg, hsl(39deg 100% 66%), hsl(332deg 100% 58%));
+    --btn_color: #fff;
+    --btn_shadow: 0 0 5px #0004;
+    --content_bg_color: #fff;
+    --content_box_shadow: 0 0 2px #0002, 0 4px 10px #0001;
+    --content_border_radius: 10px;
+    --content_text_shadow: none;
+    --content_padding: 1em;
+    --content_border: none;
+    --line_height: 1.4;
+    --content_header_gradient_color: linear-gradient(45deg, #ffdea0d4, #ff53b4eb), url(https://freetoolssite.com/wp-content/uploads/2022/02/banner.jpg.webp);
+    --content_header_color: #333;
+    --banner_gradient_color: linear-gradient(45deg, hsl(39deg 100% 50% / 63%), hsl(330deg 100% 50%)), url(https://freetoolssite.com/wp-content/uploads/2022/02/banner.jpg.webp);
+    --search_btn_bg: linear-gradient(45deg, #ffcf77, #ff0090c7);
+    --banner_color: #000;
+    --outer_container: 100%;
+    --outer_container_padding: 40px;
+    --container_width: 1300px;
+    --inner_container_padding: 0 10px;
+    --side_bar_width: 300px;
+    --form_element_border_color: #0001;
+    --form_element_focus_border_color: #ff7c4d;
+    --form_element_shadow_color: #fb736aa6;
+    --palce_holder_color: #0008;
+    --input_disabled_color: #0002;
+    --input_readonly_color: #0001;
+    --transition: 0.3s;
+    --footer_bg_color: #222;
+    --footer_color: #fff8;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;0,700;0,800;0,900;1,300&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--body_bg_color);
+    color: var(--color);
+    font-size: 1rem;
+    font-feature-settings: "liga" 0;
+    text-rendering: optimizeLegibility;
+    line-height: 1.2;
+}
+
+
+
+p {
+    line-height: var(--lin_height);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #8884;
+    opacity: 0.7;
+    outline: none;
+    -webkit-transition: .2s;
+}
+
+input[type=range]:hover {
+    background: #8885;
+    opacity: 1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--primary_color);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    background: var(--primary_color);
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-block: 0.8rem;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-block: 0.8rem;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-block: 0.6rem;
+}
+
+h4 {
+    font-size: 1.2em;
+    margin-block: 0.6rem;
+}
+
+p,
+h5 {
+    font-size: 1em;
+    margin-block: 0.6rem;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-button {
+    background-color: #eee6;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ccc8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+
+
+.outer_container {
+    padding: var(--outer_container_padding);
+    max-width: var(--outer_container);
+    margin: auto;
+}
+
+.inner_container {
+    padding: var(--inner_container_padding);
+    max-width: var(--container_width);
+    margin: auto;
+}
+
+
+.form_control {
+    border: 1px solid var(--form_element_border_color);
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    transition: var(--transition) ease-in-out;
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
+    line-height: var(--lin_height);
+}
+
+.form_control:disabled {
+    background-color: var(--input_disabled_color);
+    cursor: not-allowed;
+}
+
+.form_control[readonly] {
+    background-color: var(--input_readonly_color);
+}
+
+.form_control::placeholder {
+    color: var(--palce_holder_color);
+}
+
+.form_control:focus {
+    box-shadow: 0 0 6px var(--form_element_shadow_color);
+    border-color: #0004;
+}
+
+
+
+/* homepage style start */
+.main_content {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    --content_minus_width: calc(100% - var(--side_bar_width));
+}
+.main_content .content {
+    width: var(--content_minus_width);
+}
+.main_content .content {
+    --content_padding: 1.6em;
+}
+.main_content .side_bar {
+    width: var(--side_bar_width);
+}
+@media (max-width: 768px){
+    .main_content {
+        width: 100%;
+        flex-direction: column;
+        --side_bar_width: 100%;
+        --content_minus_width: 100%;
+    }
+}
+/* homepage style end */

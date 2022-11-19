@@ -1,0 +1,42 @@
+.navOuterContainer{
+    background-color: var(--second-nav-color);
+    font-weight: 300;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 2px #0002;
+}
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navContainer nav{
+    display: flex;
+    align-items: center;
+}
+.navContainer nav a
+{
+    padding: 15px 10px;
+    transition: var(--transition);
+    color: var(--second-nav-text-color);
+}
+.navContainer nav a:is(:hover, .active)
+{
+    color: var(--nav-link-hover);
+}
+
+.bookBtn{
+    background-color: var(--btn-color);
+    border: 1px solid var(--btn-color);
+    color: #fff !important;
+    padding: 4px 10px !important;
+    transition: var(--transition);
+    border-radius: 4px;
+    font-weight: 400;
+    margin-left: 25px;
+}
+.bookBtn:hover{
+    color: var(--btn-color) !important;
+    background-color: transparent;
+}

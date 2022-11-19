@@ -1,0 +1,23 @@
+.navOuterContainer{
+    background-color: var(--top-nav-color);
+    font-weight: 400;
+    z-index: 100;
+    box-shadow: 0 1px 2px #0002;
+    color: #888;
+}
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.nav_logo{
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    object-position: left;
+}
+.navContainer a:hover{
+    color: orangered;
+}
