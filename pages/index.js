@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import Header from "../components/Header";
+import CategoryWiseTools from '../components/Tools/CategoryWiseTools'
 import TwoGridSection from "../components/TwoGridSection";
 import Services from "../components/Services";
 import WorkingProcess from "../components/WorkingProcess";
@@ -25,14 +26,14 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-        {/* <Nav /> */}
+        <Nav />
         <Header />
 
         <section className={["outer_container"].join(" ")}>
             <div className={["inner_container"].join(" ")}>
                 <div className={["main_content"].join(" ")}>
-                    <div className={["content bg-red-200 h-40"].join(" ")}>
-
+                    <div className={["content"].join(" ")}>
+                        <CategoryWiseTools />
                     </div>
                     <aside className={["side_bar bg-red-400 h-40"].join(" ")}>
 

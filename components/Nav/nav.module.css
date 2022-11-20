@@ -1,42 +1,121 @@
-.navOuterContainer{
-    background-color: var(--second-nav-color);
-    font-weight: 300;
+._navigation_wrapper{
     position: sticky;
+    box-shadow: 0 1px 4px #0002;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 1px 2px #0002;
+    background-color: var(--nav_bg_color);
+    z-index: 99;
+    padding-top: 0;
+    padding-bottom: 0;
 }
-.navContainer{
+._navigation {
     display: flex;
+    align-items: center;
+    gap: 1rem;
     justify-content: space-between;
-    align-items: center;
+    position: relative;
+    z-index: 100;
 }
-.navContainer nav{
+._navigation .brand {
+    text-decoration: none;
+    color: var(--brand_primary_color);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    text-transform: uppercase;
+    gap: 0.5rem;
+    font-size: var(--brand_font_size);
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
 }
-.navContainer nav a
-{
-    padding: 15px 10px;
-    transition: var(--transition);
-    color: var(--second-nav-text-color);
+._navigation_wrapper ._navigation .brand .first {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2em;
+    background-image: var(--brand_gradient_color), url(../../public/banner-image.webp);
+    background-size: 100% auto;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-stroke: 1px var(--primary_color);
+    -webkit-text-stroke: 1px var(--primary_color);
 }
-.navContainer nav a:is(:hover, .active)
-{
-    color: var(--nav-link-hover);
+._navigation_wrapper ._navigation .brand .second {
+    margin-bottom: 5px;
 }
 
-.bookBtn{
-    background-color: var(--btn-color);
-    border: 1px solid var(--btn-color);
-    color: #fff !important;
-    padding: 4px 10px !important;
-    transition: var(--transition);
+.nav_toggle {
+    border: 1px solid #8885;
     border-radius: 4px;
-    font-weight: 400;
-    margin-left: 25px;
+    width: 2.5em;
+    height: 2.5em;
+    background: transparent;
+    color: var(--color);
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px 0;
+    display: var(--nav_toggle_display);
 }
-.bookBtn:hover{
-    color: var(--btn-color) !important;
-    background-color: transparent;
+.nav_toggle .icons {
+    display: block;
+    transition: var(--transition);
+    pointer-events: none;
+}
+.nav_toggle .icons span {
+    padding: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.nav_toggle .icons span.close_icon {
+    color: var(--danger_color);
+}
+.nav_toggle .icons span {
+    padding: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+._navigation_wrapper ._navigation .nav {
+    display: flex;
+}
+._navigation_wrapper ._navigation .nav>a {
+    text-decoration: none;
+    color: var(--nav_color);
+    transition: color,background-color var(--transition);
+    padding: 1.5rem 0.5rem;
+}
+._navigation_wrapper ._navigation .nav>:is(a.active, a:hover){
+    color: var(--nav_hover_color);
+}
+
+@media (max-width: 1024px){
+    .nav_mobile {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: var(--nav_bg_color);
+        max-width: 300px;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: var(--transition);
+    }
+    .nav_mobile a {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+        border-top: var(--border);
+        padding: 1.5rem 2rem !important;
+    }
+}
+@media (min-width: 768px){
+    ._navigation_wrapper ._navigation .nav>a:first-child {
+        padding-inline-start: 0;
+    }
 }

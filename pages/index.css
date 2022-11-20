@@ -1,12 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /**
 * font family loaded 
 * Josefin Sans', sans-serif
 * 'Poppins', sans-serif
 * 'Playfair Display', serif
+* "Montserrat", sans-serif
 */
 :root {
     font-size: 16px;
@@ -37,15 +34,19 @@
     --btn_color: #fff;
     --btn_shadow: 0 0 5px #0004;
     --content_bg_color: #fff;
-    --content_box_shadow: 0 0 2px #0002, 0 4px 10px #0001;
-    --content_border_radius: 10px;
+    /* --content_box_shadow: 0 0 2px #0002, 0 4px 10px #0001; */
+    /* --content_border_radius: 10px; */
     --content_text_shadow: none;
     --content_padding: 1em;
     --content_border: none;
     --line_height: 1.4;
-    --content_header_gradient_color: linear-gradient(45deg, #ffdea0d4, #ff53b4eb), url(https://freetoolssite.com/wp-content/uploads/2022/02/banner.jpg.webp);
+    --content_header_gradient_color: 
+        linear-gradient(45deg, #ffdea0d4, #ff53b4eb), 
+        url(../public/banner-image.webp);
     --content_header_color: #333;
-    --banner_gradient_color: linear-gradient(45deg, hsl(39deg 100% 50% / 63%), hsl(330deg 100% 50%)), url(https://freetoolssite.com/wp-content/uploads/2022/02/banner.jpg.webp);
+    --banner_gradient_color: 
+        linear-gradient(45deg, hsl(39deg 100% 50% / 63%), hsl(330deg 100% 50%)), 
+        url(../public/banner-image.webp);
     --search_btn_bg: linear-gradient(45deg, #ffcf77, #ff0090c7);
     --banner_color: #000;
     --outer_container: 100%;
@@ -62,19 +63,38 @@
     --transition: 0.3s;
     --footer_bg_color: #222;
     --footer_color: #fff8;
+    --shadow: 0 2px 4px #0006;
+}
+
+/* tools variable */
+:root {
+    --tools_img_filter: invert(0);
+    --tool_box_shadow: 0 0 0 1px #0001;
+    --tool_box_hover_shadow: 0 1px 4px #0001, 0 0 10px #0002;
+    --tool_box_bg: #fff;
+    --tool_box_image_bg_color: #f1f1f1;
+}
+
+/* dropdown variable */
+:root{
+    --dropdown-width: 200px;
+    --dropdown-bg: #fff;
+    --dropdown-color: inherit;
+    --dropdown-hover-color: #fff;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;0,700;0,800;0,900;1,300&display=swap");
 
 body {
     margin: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     background-color: var(--body_bg_color);
     color: var(--color);
     font-size: 1rem;
     font-feature-settings: "liga" 0;
     text-rendering: optimizeLegibility;
     line-height: 1.2;
+    font-weight: 400;
 }
 
 
@@ -115,32 +135,6 @@ input[type=range]::-moz-range-thumb {
     height: 1rem;
     background: var(--primary_color);
     cursor: pointer;
-}
-
-h1 {
-    font-size: 1.8em;
-    margin-block: 0.8rem;
-}
-
-h2 {
-    font-size: 1.6em;
-    margin-block: 0.8rem;
-}
-
-h3 {
-    font-size: 1.4em;
-    margin-block: 0.6rem;
-}
-
-h4 {
-    font-size: 1.2em;
-    margin-block: 0.6rem;
-}
-
-p,
-h5 {
-    font-size: 1em;
-    margin-block: 0.6rem;
 }
 
 img {
@@ -228,6 +222,11 @@ img {
     border-color: #0004;
 }
 
+@media (max-width: 500px){
+    :root{
+        --outer_container_padding: 40px 20px;
+    }
+}
 
 
 /* homepage style start */
@@ -255,3 +254,13 @@ img {
     }
 }
 /* homepage style end */
+
+
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

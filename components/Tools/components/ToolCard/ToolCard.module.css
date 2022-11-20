@@ -1,0 +1,36 @@
+.tool {
+    background-color: var(--tool_box_bg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: var(--tool_box_shadow);
+    transition: box-shadow var(--transition);
+}
+
+.tool .img {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--tool_box_image_bg_color);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.tool .text {
+    transition: var(--transition);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tool .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

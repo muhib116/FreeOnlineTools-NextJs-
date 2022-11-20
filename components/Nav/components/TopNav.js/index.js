@@ -1,16 +1,14 @@
 import classes from './topNav.module.css'
 import Image from 'next/image'
-import logo from '/public/logo.png'
 import Link from 'next/link'
+import SocialIcon from '../SocialIcon/index'
 import pointsIcon from '/public/icons/points.png'
 
 export default function TopNav() {
   return (
-    <div className={ classes.navOuterContainer }>
-        <div className={ `${ [classes.navContainer].join(' ') } container` }>
-            <Link href="/">
-                <Image src={logo} alt='Logo' className={ [classes.nav_logo].join(' ') } />
-            </Link>
+    <nav className={ ['outer_container py-2', classes.navOuterContainer].join(' ') }>
+        <div className={ ['inner_container py-0 flex justify-between items-center', classes.navContainer].join(' ') }>
+            <SocialIcon />
             <div className={ ['flex gap-5'].join(' ') }>
                 <Link href="#" className={ ['flex items-center gap-1'].join(' ') }>
                     <Image src={ pointsIcon } alt='earn points' width={24} height={24} className={ ['w-6'].join(' ') }/>
@@ -25,6 +23,6 @@ export default function TopNav() {
                 </Link>
             </div>
         </div>
-    </div>
+    </nav>
   )
 }
