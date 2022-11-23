@@ -1,9 +1,8 @@
 import classes from './nav.module.css'
 import Image from 'next/image'
-import logo from '../../public/logo.png'
 import Link from 'next/link';
 import Dropdown from './components/Dropdown'
-import TopNav from './components/TopNav.js';
+import TopNav from './components/TopNav.js'
 
 
 export default function Nav() {

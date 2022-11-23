@@ -47,22 +47,11 @@ export default function Index()
               setIsSubmitting
             }) 
           }}>
-              <input 
-                name="name" 
-                placeholder='Enter your full name'
-                required="required"
-                value={ name }
-                onInput={ (e) => {handleInput(e, setName)}}
+              <input name="name" placeholder='Enter your full name' required="required" value={ name } onInput={ (e) => {handleInput(e, setName)}}
                 className={ [isSubmitting && classes.disabled].join(' ') }
               />
               <div className={ ['relative'].join(' ') }>
-                <input
-                  name="email" 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  required="required"
-                  value={ email } 
-                  className={ [isSubmitting && classes.disabled].join(' ') }
+                <input name="email"  type="email"  placeholder="Enter your email"  required="required" value={ email }  className={ [isSubmitting && classes.disabled].join(' ') }
                   onInput={ (e) => {
                     handleInput(e, setEmail)
                     emailValidation({email: e.target.value, setIsEmailValid, setMessage, setMessageType})
@@ -72,36 +61,19 @@ export default function Index()
                 <EmailStatusIcon isLoading={ isLoading } isEmailExist={ isEmailExist } isEmailValid={ isEmailValid } />
               </div>
               <div className={ ['relative'].join(' ') }>
-                <input 
-                  name="password"
-                  type={ isReadablePass ? 'text' : 'password' }
-                  placeholder="Password"
-                  required="required"
-                  className={ [isSubmitting && classes.disabled].join(' ') }
-                  value={ password }
+                <input name="password" type={ isReadablePass ? 'text' : 'password' } placeholder="Password" required="required" className={ [isSubmitting && classes.disabled].join(' ') } value={ password }
                   onInput={(e) => {handleInput(e, setPassword)}}
                 />
                 <EyeIcon 
                   isOpen={isReadablePass}
-                  style={{
-                    cursor: "pointer",
-                    color: '#fff8',
-                    position: 'absolute',
-                    top: '10px',
-                    right: '5px',
-                    transform: 'scale(0.8)',
-                  }}
+                  style={{ cursor: "pointer", color: '#fff8', position: 'absolute', top: '10px', right: '5px', transform: 'scale(0.8)'}}
                   onClick={ () => setIsReadablePass(!isReadablePass) }
                 />
               </div>
               <PasswordStrengthBar password={password} />
 
               <label className={ ['flex items-center gap-2 text-gray-400 text-xs mt-4 mb-3 select-none', classes.acceptLink].join(' ') }>
-                  <input 
-                    name="isAgree" 
-                    type="checkbox" 
-                    required="required"
-                    className={ [isSubmitting && classes.disabled].join(' ') }
+                  <input name="isAgree" type="checkbox" required="required"className={ [isSubmitting && classes.disabled].join(' ') }
                     onInput={(e) => {handleInput(e, setIsAgree)}}
                   />
                   <div>
@@ -111,13 +83,7 @@ export default function Index()
 
               <button 
                 type="submit" 
-                className={ [
-                  classes.btn, 
-                  classes.btnPrimary, 
-                  classes.btnBlock, 
-                  classes.BtnLarge,
-                  isLoading && classes.disabled
-                ].join(' ') }
+                className={ [classes.btn, classes.btnPrimary, classes.btnBlock, classes.BtnLarge,isLoading && classes.disabled].join(' ') }
               >
                 Create Account !
               </button>
@@ -125,23 +91,10 @@ export default function Index()
           <div className={ ['grid', classes.signIn].join(' ') }>
               <div className={ ['flex gap-3'].join(' ') }>
                   Already have account?
-                  <Link href="/auth/login">
-                      Sign In
-                  </Link>
+                  <Link href="/auth/login">Sign In</Link>
               </div>
           </div>
       </div>
     </div>
   )
 }
-
-
-// export async function getServerSideProps(context) {
-//   let user = await fetch('http://127.0.0.1:8000/api/users-by-email/muhib@gmail.com')
-//       user = await user.json()
-//   return {
-//     props: {
-//       user: user
-//     }
-//   }
-// }

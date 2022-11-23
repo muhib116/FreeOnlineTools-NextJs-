@@ -6,6 +6,7 @@ export default function useHelper() {
 
         return text
     }
+
     return {
         truncate
     }

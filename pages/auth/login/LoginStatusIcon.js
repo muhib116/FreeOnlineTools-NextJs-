@@ -13,8 +13,8 @@ export default function LoginStatusIcon({ isLoading, isLogIn }) {
                     height: "18px",
                     borderWidth: "2px",
                     position: "absolute",
-                    top: "12px",
-                    right: "10px",
+                    top: "4px",
+                    right: "4px",
                 }}
             />
         }
@@ -27,8 +27,9 @@ export default function LoginStatusIcon({ isLoading, isLogIn }) {
                     width: "20px",
                     height: "20px",
                     position: "absolute",
-                    top: "10px",
-                    right: "7px"
+                    top: "3px",
+                    right: "4px",
+                    filter: "grayscale(1) brightness(5)"
                 }}
             />
         }
